@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<table xmlns="http://query.yahooapis.com/v1/schema/table.xsd">
+  <meta>
+    <author>Brandon QUAZIE kwaselow</author>
+    <documentationURL>http://quaziesyahoohack.appspot.com</documentationURL>
+    <description>Open Table for SECRET YAHOO LOCATION AWESOME</description>
+    <sampleQuery>select * from findLocation where lat=42.290602 lon=-83.715947</sampleQuery>
+  </meta>
+  <bindings>
+    <!-- get poeid informatoin -->
+    <select produces="XML" itemPath="places.place">
+      <urls>
+        <url>http://gws.maps.yahoo.com/FindLocation?q={lat},{lon}&gflags=R&flags=W</url>
+      </urls>
+      <paging model="offset">
+        <start default="0" id="offset"/>
+        <pagesize max="20" id=""/>
+        <total default="10"/>
+      </paging>
+      <inputs>
+        <key id="lat" type="xs:string" paramType="path" required="true"/>
+        <key id="lon" type="xs:string" paramType="path" required="true"/>
+      </inputs>
+    </select>
+  </bindings>
+</table>

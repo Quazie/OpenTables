@@ -8,9 +8,9 @@
   </meta>
   <bindings>
     <!-- get poeid informatoin -->
-    <select produces="XML" itemPath="places.place">
+    <select produces="XML" itemPath="ResultSet">
       <urls>
-        <url>http://gws.maps.yahoo.com/FindLocation?q={lat},{lon}&gflags=R&flags=W</url>
+        <url>http://gws.maps.yahoo.com/FindLocation?q={lat},{lon}&amp;gflags=R&amp;flags=W</url>
       </urls>
       <paging model="offset">
         <start default="0" id="offset"/>
